@@ -28,7 +28,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
     const text = encodeURIComponent(
       `Hey FLY OR FALL! I want to order:\n• Product: ${product.name}\n• Size: ${selectedSize}\n• Color: ${selectedColor}\n• Quantity: ${quantity}\n• Price: ${product.priceFormatted}\n\nPlease confirm availability and payment link!`
     );
-    window.open(`https://wa.me/+919037235174?text=${text}`, "_blank");
+    window.open(`https://wa.me/918590877545?text=${text}`, "_blank");
   };
 
   return (

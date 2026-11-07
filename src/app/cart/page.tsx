@@ -60,7 +60,7 @@ export default function CartPage() {
     );
 
     // Open WhatsApp
-    window.open(`https://wa.me/+919037235174?text=${message}`, "_blank");
+    window.open(`https://wa.me/918590877545?text=${message}`, "_blank");
     setOrderComplete(true);
     clearCart();
   };

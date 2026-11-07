@@ -94,20 +94,20 @@ export default function Footer() {
             </p>
             <div className="space-y-2 text-sm">
               <a
-                href="https://wa.me/+919037235174"
+                href="https://wa.me/918590877545"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white/80 hover:text-white transition"
               >
-                <span>💬</span> WhatsApp Support: +91 90372 35174
+                <span>💬</span> WhatsApp Support: +91 85908 77545
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/azeemahammed"
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2 text-white/80 hover:text-white transition"
               >
-                <span>📸</span> Instagram: @flyorfall.in
+                <span>📸</span> Instagram: @azeemahammed
               </a>
             </div>
             <div className="pt-2">
