@@ -21,7 +21,7 @@ export default function HomePage() {
           <img
             src="/assets/hero.jpeg"
             alt="Fly Or Fall Streetwear"
-            className="w-full h-[32rem] object-cover hidden max-md:block filter brightness-90"
+            className="w-full h-[32rem] object-cover hidden max-md:block filter brightness-90 mt-[-4rem]"
           />
 
           {/* Hero Overlay Box */}
