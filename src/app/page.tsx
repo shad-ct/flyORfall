@@ -29,7 +29,7 @@ export default function HomePage() {
 
           {/* Hero Text overlay matching Highpe positioning */}
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 sm:pb-16 px-4 text-center z-10 space-y-4 max-w-4xl mx-auto">
-            <h1 className="font-['Barlow_Condensed'] text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wide leading-none text-white drop-shadow-lg">
+            <h1 className="font-['Barlow_Condensed'] text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wide leading-none text-white drop-shadow-lg mt-4">
               DARE TO FLY. READY TO FALL.
             </h1>
             <p className="text-white/80 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-medium tracking-wider uppercase">
