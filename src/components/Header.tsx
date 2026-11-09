@@ -98,7 +98,12 @@ export default function Header() {
             href="/"
             className="flex items-center gap-2 group transition"
           >
-            <span className="font-['Barlow_Condensed'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-[0.2em] uppercase text-white group-hover:text-white/80 transition">
+            <img
+              src="/assets/logo.jpeg"
+              alt="FLY OR FALL"
+              className="h-8 sm:h-10 w-auto"
+            />
+            <span className="font-['Barlow_Condensed'] text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-[0.2em] uppercase text-white group-hover:text-white/80 transition hidden">
               FLY OR FALL
             </span>
           </Link>

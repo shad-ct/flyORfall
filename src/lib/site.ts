@@ -1,5 +1,5 @@
 export const SITE_NAME = "FLY OR FALL";
-export const SITE_TAGLINE = "Dare to Fly. Ready to Fall.";
+export const SITE_TAGLINE = "FLY HIGH";
 export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
 export interface Product {
@@ -61,7 +61,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["30", "32", "34", "36"],
     colors: ["Tactical Black", "Military Olive"],
     description:
-      "Built for the climb and the freefall. The Altitude Cargo features high-durability ripstop nylon blend with modular dual-bellow pockets, adjustable ankle bungee toggles, and relaxed articulated knee darts for effortless street movement.",
+      "Lightweight imported fabric, quick-dry technology, relaxed fit with a wide-leg silhouette, adjustable bottom drawstrings, detailed embroidery work, comfortable and breathable for everyday use.",
     details: [
       "Durable water-repellent Ripstop Nylon-Cotton blend",
       "6-pocket tactical utility layout with heavy-duty metal zippers",

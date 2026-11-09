@@ -13,13 +13,13 @@ export default function HomePage() {
         {/* Desktop Image */}
         <div className="w-full relative min-w-full">
           <img
-            src="/assets/cloned/images/2595fa418c9f.png"
+            src="/assets/hero.jpeg"
             alt="Fly Or Fall Streetwear"
             className="w-full h-[34.1875rem] md:h-auto 2xl:h-[45rem] block object-cover max-md:hidden filter brightness-90"
           />
           {/* Mobile Image */}
           <img
-            src="/assets/cloned/images/928c181f1ff4.png"
+            src="/assets/hero.jpeg"
             alt="Fly Or Fall Streetwear"
             className="w-full h-[32rem] object-cover hidden max-md:block filter brightness-90"
           />

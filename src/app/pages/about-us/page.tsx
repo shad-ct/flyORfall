@@ -17,16 +17,16 @@ export default function AboutUsPage() {
         <h1 className="font-['Barlow_Condensed'] text-5xl sm:text-7xl font-black uppercase tracking-tight text-white">
           OUR STORY
         </h1>
-        <p className="text-white/70 text-base sm:text-lg leading-relaxed font-light">
-          FLY OR FALL was born in 2024 from an obsession with raw urban subcultures, heavyweight fabrics, and the philosophy that taking the ultimate risk defines who you are.
-        </p>
+<p className="text-white/70 text-base sm:text-lg leading-relaxed font-light">
+FLY OR FALL is a streetwear brand focused on creating unique styles and distinctive fashion pieces. Inspired by everyday wear, travel, and culture, we bring creativity and individuality into fashion through thoughtfully designed pieces that combine comfort, style, and functionality. Our vision is to create more than just clothing — to build a culture around personal expression and everyday fashion. <span className="font-bold uppercase">FLY HIGH</span>
+</p>
       </div>
 
       {/* Hero Brand Imagery */}
       <div className="relative h-[450px] sm:h-[550px] rounded-xl overflow-hidden border border-white/10 shadow-2xl">
         <img
-          src="/assets/cloned/images/2595fa418c9f.png"
-          alt="Fly Or Fall Studio"
+          src="/assets/hero.jpeg"
+          alt="Fly Or Fall hero"
           className="w-full h-full object-cover filter brightness-75"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-8 md:p-12">
