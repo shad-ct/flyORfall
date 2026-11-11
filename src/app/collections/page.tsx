@@ -27,7 +27,7 @@ export default function CollectionsPage() {
       {/* Collection Categories */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 mb-16 max-w-5xl mx-auto">
         <Link
-          href="/collections/all?category=T-SHIRTS"
+          href="/?category=T-SHIRTS"
           className="group relative h-[280px] sm:h-[380px] rounded-lg overflow-hidden border border-white/10"
         >
           <img
@@ -49,7 +49,7 @@ export default function CollectionsPage() {
         </Link>
 
         <Link
-          href="/collections/all?category=BOTTOM"
+          href="/?category=BOTTOM"
           className="group relative h-[280px] sm:h-[380px] rounded-lg overflow-hidden border border-white/10"
         >
           <img

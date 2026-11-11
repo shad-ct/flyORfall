@@ -13,9 +13,9 @@ export default function Footer() {
             <h3 className="font-['Barlow_Condensed'] text-3xl font-extrabold tracking-widest uppercase text-white">
               FLY OR FALL
             </h3>
-            <p className="text-white/60 text-sm leading-relaxed max-w-sm">
+            {/* <p className="text-white/60 text-sm leading-relaxed max-w-sm">
               Born from urban ambition and the fearless spirit of youth. Premium streetwear crafted in Hindustan with uncompromising heavyweight fabrics and razor-sharp cuts.
-            </p>
+            </p> */}
             <div className="pt-2 text-xs font-semibold text-white/50 tracking-wider uppercase">
               DARE TO FLY. READY TO FALL.
             </div>
@@ -33,7 +33,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/collections/all" className="hover:text-white transition">
+                <Link href="/" className="hover:text-white transition">
                   All Streetwear Pieces
                 </Link>
               </li>

@@ -17,9 +17,9 @@ export default function AboutUsPage() {
         <h1 className="font-['Barlow_Condensed'] text-5xl sm:text-7xl font-black uppercase tracking-tight text-white">
           OUR STORY
         </h1>
-<p className="text-white/70 text-base sm:text-lg leading-relaxed font-light">
-FLY OR FALL is a streetwear brand focused on creating unique styles and distinctive fashion pieces. Inspired by everyday wear, travel, and culture, we bring creativity and individuality into fashion through thoughtfully designed pieces that combine comfort, style, and functionality. Our vision is to create more than just clothing — to build a culture around personal expression and everyday fashion. <span className="font-bold uppercase">FLY HIGH</span>
-</p>
+        <p className="text-white/70 text-base sm:text-lg leading-relaxed font-light">
+          FLY OR FALL is a streetwear brand focused on creating unique styles and distinctive fashion pieces. Inspired by everyday wear, travel, and culture, we bring creativity and individuality into fashion through thoughtfully designed pieces that combine comfort, style, and functionality. Our vision is to create more than just clothing — to build a culture around personal expression and everyday fashion. <span className="font-bold uppercase">FLY HIGH</span>
+        </p>
       </div>
 
       {/* Hero Brand Imagery */}
@@ -37,7 +37,7 @@ FLY OR FALL is a streetwear brand focused on creating unique styles and distinct
       </div>
 
       {/* Core Principles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
+      {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8">
         <div className="p-8 bg-[rgb(16,16,16)] border border-white/10 rounded-lg space-y-3">
           <span className="text-xs font-bold tracking-widest uppercase text-white/40">01</span>
           <h3 className="font-['Barlow_Condensed'] text-2xl font-bold uppercase text-white">
@@ -67,7 +67,7 @@ FLY OR FALL is a streetwear brand focused on creating unique styles and distinct
             We release small, focused capsules. We never mass-produce or flood the market. When a drop is gone, it enters the archive.
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Call to action */}
       <div className="text-center pt-12 space-y-6 border-t border-white/10">
@@ -76,7 +76,7 @@ FLY OR FALL is a streetwear brand focused on creating unique styles and distinct
         </h2>
         <div className="flex justify-center gap-4">
           <Link
-            href="/collections/all"
+            href="/"
             className="px-8 py-4 bg-white text-black font-['Barlow_Condensed'] text-base font-bold uppercase tracking-widest rounded hover:bg-white/90 transition shadow-xl"
           >
             Shop The 2-Piece Capsule

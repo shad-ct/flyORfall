@@ -99,7 +99,7 @@ export default function CartPage() {
           </h1>
         </div>
         <Link
-          href="/collections/all"
+          href="/"
           className="text-xs font-bold uppercase tracking-widest text-white/70 hover:text-white underline"
         >
           Continue Shopping
@@ -120,7 +120,7 @@ export default function CartPage() {
             </p>
           </div>
           <Link
-            href="/collections/all"
+            href="/"
             className="inline-block px-8 py-3.5 bg-white text-black font-['Barlow_Condensed'] text-base font-bold uppercase tracking-widest rounded hover:bg-white/90 transition shadow-lg"
           >
             Explore The Drop

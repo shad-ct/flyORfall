@@ -16,7 +16,7 @@ function HeaderNav() {
       {NAV_LINKS.map((link) => {
         let isActive = false;
         if (link.category) {
-          isActive = pathname.startsWith("/collections/all") && (
+          isActive = (pathname === "/" || pathname.startsWith("/collections/all")) && (
             (link.category === "ALL" && !currentCategory) ||
             currentCategory === link.category
           );
@@ -194,7 +194,7 @@ export default function Header() {
             onSubmit={(e) => {
               e.preventDefault();
               if (searchQuery.trim()) {
-                router.push(`/collections/all?q=${encodeURIComponent(searchQuery.trim())}`);
+                router.push(`/?q=${encodeURIComponent(searchQuery.trim())}`);
                 setSearchOpen(false);
               }
             }}

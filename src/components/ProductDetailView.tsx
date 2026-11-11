@@ -37,7 +37,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
       <nav className="flex items-center space-x-2 text-[11px] sm:text-xs text-white/50 mb-6 sm:mb-8 uppercase tracking-wider">
         <Link href="/" className="hover:text-white transition">Home</Link>
         <span>/</span>
-        <Link href="/collections/all" className="hover:text-white transition">Products</Link>
+        <Link href="/" className="hover:text-white transition">Products</Link>
         <span>/</span>
         <span className="text-white font-medium truncate">{product.name}</span>
       </nav>
