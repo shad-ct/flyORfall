@@ -84,7 +84,7 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const NAV_LINKS = [
-  { href: "/collections", label: "NEW ARRIVALS", category: null },
+  // { href: "/collections", label: "NEW ARRIVALS", category: null },
   { href: "/collections/all", label: "ALL ITEMS", category: "ALL" },
   { href: "/collections/all?category=T-SHIRTS", label: "T-SHIRTS", category: "T-SHIRTS" },
   { href: "/collections/all?category=BOTTOM", label: "BOTTOM", category: "BOTTOM" },

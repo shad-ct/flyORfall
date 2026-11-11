@@ -5,7 +5,16 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.unsplash.com' }
     ]
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/collections/all',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

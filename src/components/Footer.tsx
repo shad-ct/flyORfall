@@ -22,7 +22,7 @@ export default function Footer() {
           </div>
 
           {/* Collections & Shop */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="font-['Barlow_Condensed'] text-base font-bold tracking-widest uppercase text-white">
               COLLECTIONS
             </h4>
@@ -48,10 +48,10 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Help & Policies */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="font-['Barlow_Condensed'] text-base font-bold tracking-widest uppercase text-white">
               HELP & POLICIES
             </h4>
@@ -82,7 +82,7 @@ export default function Footer() {
                 </span>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Social & Contact */}
           <div className="space-y-4">
@@ -110,23 +110,23 @@ export default function Footer() {
                 <span>📸</span> Instagram: @azeemahammed
               </a>
             </div>
-            <div className="pt-2">
+            {/* <div className="pt-2">
               <span className="inline-block px-3 py-1 bg-white/10 text-white/80 text-[11px] font-bold tracking-wider rounded uppercase">
                 Free Express Delivery Nationwide
               </span>
-            </div>
+            </div> */}
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 space-y-4 sm:space-y-0">
+        {/* <div className="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 space-y-4 sm:space-y-0">
           <p>© 2024 FLY OR FALL. All rights reserved.</p>
           <div className="flex space-x-6">
             <span>Designed for the Streets</span>
             <span>•</span>
             <span>Crafted in Hindustan</span>
           </div>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

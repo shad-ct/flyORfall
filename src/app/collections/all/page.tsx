@@ -65,7 +65,10 @@ function CollectionsAllContent() {
     { label: "BOTTOMS & CARGOS", val: "BOTTOM", count: PRODUCTS.filter(p => p.category === "BOTTOM").length },
   ];
 
-  const activeFiltersCount = (selectedSize ? 1 : 0) + (sortBy !== "featured" ? 1 : 0);
+  const activeFiltersCount =
+    (selectedCategory !== "ALL" ? 1 : 0) +
+    (selectedSize ? 1 : 0) +
+    (sortBy !== "featured" ? 1 : 0);
 
   return (
     <div className="max-w-[1600px] mx-auto px-3 sm:px-8 lg:px-12 py-6 sm:py-10 md:py-14">
@@ -284,9 +287,9 @@ function CollectionsAllContent() {
           />
 
           {/* Bottom Sheet Modal */}
-          <div className="relative z-10 w-full max-h-[85vh] bg-[rgb(16,16,16)] border-t border-white/15 rounded-t-2xl p-6 overflow-y-auto space-y-6 shadow-2xl animate-in slide-in-from-bottom duration-300">
+          <div className="relative z-10 w-full max-h-[85vh] bg-[rgb(16,16,16)] border-t border-white/15 rounded-t-2xl flex flex-col shadow-2xl animate-in slide-in-from-bottom duration-300">
             {/* Modal Header */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div className="flex items-center justify-between p-6 border-b border-white/10 shrink-0">
               <div className="flex items-center gap-2">
                 <h2 className="font-['Barlow_Condensed'] text-2xl font-black uppercase tracking-wider text-white">
                   FILTER & SORT
@@ -300,84 +303,118 @@ function CollectionsAllContent() {
               <button
                 type="button"
                 onClick={() => setMobileFilterOpen(false)}
-                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white"
+                className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:text-white cursor-pointer"
+                aria-label="Close filters"
               >
                 ✕
               </button>
             </div>
 
-            {/* Sort Section */}
-            <div className="space-y-3">
-              <h3 className="font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-wider text-white/70">
-                Sort By
-              </h3>
-              <div className="grid grid-cols-2 gap-2">
-                {[
-                  { label: "Featured", val: "featured" },
-                  { label: "Price: Low to High", val: "price-asc" },
-                  { label: "Price: High to Low", val: "price-desc" },
-                  { label: "Alphabetical", val: "name-asc" },
-                ].map((s) => (
-                  <button
-                    key={s.val}
-                    type="button"
-                    onClick={() => setSortBy(s.val)}
-                    className={`p-2.5 text-xs font-['Barlow_Condensed'] font-bold uppercase rounded border text-left transition ${
-                      sortBy === s.val
-                        ? "bg-white text-black border-white shadow"
-                        : "bg-white/5 text-white/80 border-white/10 hover:border-white/30"
-                    }`}
-                  >
-                    {s.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Filter by Size */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
+            {/* Scrollable Filter Options */}
+            <div className="p-6 overflow-y-auto space-y-6 flex-1">
+              {/* Category Filter */}
+              <div className="space-y-3">
                 <h3 className="font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-wider text-white/70">
-                  Size
+                  Category
                 </h3>
-                {selectedSize && (
-                  <button
-                    type="button"
-                    onClick={() => setSelectedSize(null)}
-                    className="text-xs text-white/50 hover:text-white underline font-bold uppercase"
-                  >
-                    Clear Size
-                  </button>
-                )}
+                <div className="grid grid-cols-1 gap-2">
+                  {categories.map((c) => {
+                    const isActive = selectedCategory === c.val;
+                    return (
+                      <button
+                        key={c.val}
+                        type="button"
+                        onClick={() => handleCategoryChange(c.val)}
+                        className={`py-3 px-4 flex items-center justify-between text-xs font-['Barlow_Condensed'] font-bold uppercase rounded-sm border transition cursor-pointer ${
+                          isActive
+                            ? "bg-white text-black border-white shadow-sm font-extrabold"
+                            : "bg-white/5 text-white/80 border-white/10 hover:border-white/30"
+                        }`}
+                      >
+                        <span>{c.label}</span>
+                        <span className={`text-[10px] ${isActive ? "text-black/60 font-black" : "text-white/40"}`}>
+                          ({c.count})
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
-              <div className="grid grid-cols-4 gap-2">
-                {allSizes.map((s) => (
-                  <button
-                    key={s}
-                    type="button"
-                    onClick={() => setSelectedSize(selectedSize === s ? null : s)}
-                    className={`h-11 flex items-center justify-center text-sm font-['Barlow_Condensed'] font-bold uppercase tracking-wider rounded-sm border transition-all duration-150 cursor-pointer ${
-                      selectedSize === s
-                        ? "bg-white text-black border-white shadow-md font-extrabold scale-102"
-                        : "bg-white/5 border-white/15 text-white/80 hover:border-white/50 hover:text-white"
-                    }`}
-                  >
-                    {s}
-                  </button>
-                ))}
+
+              {/* Sort Section */}
+              <div className="space-y-3">
+                <h3 className="font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-wider text-white/70">
+                  Sort By
+                </h3>
+                <div className="grid grid-cols-2 gap-2">
+                  {[
+                    { label: "Featured", val: "featured" },
+                    { label: "Price: Low to High", val: "price-asc" },
+                    { label: "Price: High to Low", val: "price-desc" },
+                    { label: "Alphabetical", val: "name-asc" },
+                  ].map((s) => (
+                    <button
+                      key={s.val}
+                      type="button"
+                      onClick={() => setSortBy(s.val)}
+                      className={`p-3 text-xs font-['Barlow_Condensed'] font-bold uppercase rounded-sm border text-center flex items-center justify-center transition cursor-pointer ${
+                        sortBy === s.val
+                          ? "bg-white text-black border-white shadow-sm font-extrabold"
+                          : "bg-white/5 text-white/80 border-white/10 hover:border-white/30"
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Filter by Size */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h3 className="font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-wider text-white/70">
+                    Size
+                  </h3>
+                  {selectedSize && (
+                    <button
+                      type="button"
+                      onClick={() => setSelectedSize(null)}
+                      className="text-xs text-white/50 hover:text-white underline font-bold uppercase cursor-pointer"
+                    >
+                      Clear Size
+                    </button>
+                  )}
+                </div>
+                <div className="grid grid-cols-4 gap-2">
+                  {allSizes.map((s) => (
+                    <button
+                      key={s}
+                      type="button"
+                      onClick={() => setSelectedSize(selectedSize === s ? null : s)}
+                      className={`h-11 flex items-center justify-center text-sm font-['Barlow_Condensed'] font-bold uppercase tracking-wider rounded-sm border transition-all duration-150 cursor-pointer ${
+                        selectedSize === s
+                          ? "bg-white text-black border-white shadow-md font-extrabold scale-[1.02]"
+                          : "bg-white/5 border-white/15 text-white/80 hover:border-white/50 hover:text-white"
+                      }`}
+                    >
+                      {s}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="pt-4 border-t border-white/10 flex items-center gap-3">
-              {(selectedSize !== null || sortBy !== "featured") && (
+            {/* Pinned Action Buttons at bottom of sheet */}
+            <div className="p-4 sm:p-6 border-t border-white/10 bg-[rgb(16,16,16)] flex items-center gap-3 shrink-0">
+              {(selectedSize !== null || sortBy !== "featured" || selectedCategory !== "ALL") && (
                 <button
                   type="button"
                   onClick={() => {
+                    handleCategoryChange("ALL");
                     setSelectedSize(null);
                     setSortBy("featured");
                   }}
-                  className="flex-1 py-3.5 bg-white/10 hover:bg-white/15 text-white font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-widest rounded transition"
+                  className="w-1/3 py-3.5 px-4 bg-white/10 hover:bg-white/15 text-white font-['Barlow_Condensed'] text-sm font-bold uppercase tracking-widest rounded-sm transition text-center flex items-center justify-center cursor-pointer"
                 >
                   Reset
                 </button>
@@ -385,9 +422,13 @@ function CollectionsAllContent() {
               <button
                 type="button"
                 onClick={() => setMobileFilterOpen(false)}
-                className="flex-2 py-3.5 bg-white text-black font-['Barlow_Condensed'] text-base font-bold uppercase tracking-widest rounded hover:bg-neutral-200 transition shadow-xl"
+                className={`py-3.5 px-6 bg-white text-black font-['Barlow_Condensed'] text-sm sm:text-base font-bold uppercase tracking-widest rounded-sm hover:bg-neutral-200 transition shadow-xl text-center flex items-center justify-center cursor-pointer ${
+                  selectedSize !== null || sortBy !== "featured" || selectedCategory !== "ALL"
+                    ? "flex-1"
+                    : "w-full"
+                }`}
               >
-                Apply • View {filteredProducts.length} Pieces
+                Apply • View {filteredProducts.length} {filteredProducts.length === 1 ? "Piece" : "Pieces"}
               </button>
             </div>
           </div>

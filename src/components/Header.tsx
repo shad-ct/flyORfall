@@ -2,7 +2,7 @@
 
 import React, { useState, Suspense } from "react";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { useCart } from "../lib/cart";
 import { NAV_LINKS } from "../lib/site";
 
@@ -52,6 +52,7 @@ function HeaderNav() {
 }
 
 export default function Header() {
+  const router = useRouter();
   const { totalItems, setIsCartOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -189,9 +190,18 @@ export default function Header() {
       {/* Expandable Search Bar */}
       {searchOpen && (
         <div className="bg-[rgb(18,18,18)] border-t border-b border-white/10 px-4 py-3 transition animate-in fade-in duration-200">
-          <div className="max-w-2xl mx-auto flex items-center gap-3">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (searchQuery.trim()) {
+                router.push(`/collections/all?q=${encodeURIComponent(searchQuery.trim())}`);
+                setSearchOpen(false);
+              }
+            }}
+            className="max-w-2xl mx-auto flex items-center gap-3"
+          >
             <svg
-              className="w-5 h-5 text-white/50"
+              className="w-5 h-5 text-white/50 shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -212,21 +222,21 @@ export default function Header() {
               autoFocus
             />
             {searchQuery && (
-              <Link
-                href={`/collections/all?q=${encodeURIComponent(searchQuery)}`}
-                onClick={() => setSearchOpen(false)}
-                className="px-3 py-1 bg-white text-black text-xs font-bold uppercase rounded"
+              <button
+                type="submit"
+                className="px-3 py-1 bg-white text-black text-xs font-bold uppercase rounded hover:bg-neutral-200 transition shrink-0 cursor-pointer"
               >
                 Go
-              </Link>
+              </button>
             )}
             <button
+              type="button"
               onClick={() => setSearchOpen(false)}
-              className="text-white/60 hover:text-white text-xs uppercase"
+              className="text-white/60 hover:text-white text-xs uppercase shrink-0 cursor-pointer"
             >
               Cancel
             </button>
-          </div>
+          </form>
         </div>
       )}
 

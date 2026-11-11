@@ -1,11 +1,12 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import ProductCard from "../components/ProductCard";
 import { PRODUCTS } from "../lib/site";
 
 export default function HomePage() {
+  redirect("/collections/all");
+
   return (
     <div className="w-full bg-[rgb(11,11,11)] text-white">
       {/* Highpe Hero Section */}
@@ -32,21 +33,21 @@ export default function HomePage() {
             <h1 className="font-['Barlow_Condensed'] text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-wide leading-none text-white drop-shadow-lg mt-4">
               DARE TO FLY. READY TO FALL.
             </h1>
-            <p className="text-white/80 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-medium tracking-wider uppercase">
+            {/* <p className="text-white/80 text-xs sm:text-sm md:text-base max-w-xl mx-auto font-medium tracking-wider uppercase">
               Heavyweight Luxury Streetwear • Crafted in Hindustan
-            </p>
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
-              <Link
-                href="/collections/all"
-                className="w-full sm:w-auto px-8 py-3.5 bg-white text-black font-['Barlow_Condensed'] text-sm sm:text-base font-bold tracking-[2px] uppercase hover:bg-neutral-200 active:scale-[0.98] transition-all rounded-xs shadow-xl"
-              >
-                Shop New Arrivals
-              </Link>
+            </p> */}
+            <div className="pt-2 flex flex-col items-center justify-center gap-3 w-full sm:w-auto">
               <Link
                 href="/pages/about-us"
-                className="w-full sm:w-auto px-8 py-3.5 bg-black/60 backdrop-blur-md border border-white/30 text-white font-['Barlow_Condensed'] text-sm sm:text-base font-bold tracking-[2px] uppercase hover:border-white hover:bg-white/10 transition-all rounded-xs"
+                className="w-full sm:w-auto min-w-[200px] text-center px-8 py-3.5 bg-black/60 backdrop-blur-md border border-white/30 text-white font-['Barlow_Condensed'] text-sm sm:text-base font-bold tracking-[2px] uppercase hover:border-white hover:bg-white/10 transition-all rounded-xs"
               >
                 Our Story
+              </Link>
+              <Link
+                href="/collections/all"
+                className="w-full sm:w-auto min-w-[200px] text-center px-8 py-3.5 bg-white text-black font-['Barlow_Condensed'] text-sm sm:text-base font-bold tracking-[2px] uppercase hover:bg-neutral-200 active:scale-[0.98] transition-all rounded-xs shadow-xl"
+              >
+                All Products
               </Link>
             </div>
           </div>
@@ -162,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust Badges */}
+      {/* Trust Badges
       <section className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-16">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div className="space-y-2 p-6 bg-white/5 rounded-lg border border-white/5">
@@ -197,9 +198,9 @@ export default function HomePage() {
             <p className="text-xs text-white/60">UPI, Net Banking, Cards & Cash on Delivery available.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      {/* Customer Reviews Section */}
+      {/* Customer Reviews Section
       <section className="max-w-[1600px] mx-auto px-4 sm:px-8 lg:px-12 py-16 border-t border-white/10">
         <div className="text-center mb-12">
           <span className="text-xs font-bold tracking-[0.2em] text-white/50 uppercase block mb-1">
@@ -241,7 +242,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

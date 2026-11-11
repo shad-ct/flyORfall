@@ -37,7 +37,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <CartProvider>
-          <AnnouncementBar />
+          {/* <AnnouncementBar /> */}
           <Header />
           <CartDrawer />
           <main className="flex-1 w-full bg-[rgb(11,11,11)]">{children}</main>
