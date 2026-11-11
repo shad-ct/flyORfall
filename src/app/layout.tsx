@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN || "http://localhost:3000"),
   title: `${SITE_NAME} | Official Streetwear Store`,
   description: `${SITE_NAME} - ${SITE_TAGLINE}. Exclusive drops, heavyweight fabrics, and bold urban cuts.`,
+  icons: {
+    icon: [
+      { url: "/assets/logo.jpeg" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/assets/logo.jpeg",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: `${SITE_NAME} | Streetwear`,
     description: SITE_TAGLINE,
