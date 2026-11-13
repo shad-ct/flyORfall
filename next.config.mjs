@@ -13,6 +13,11 @@ const nextConfig = {
         destination: '/',
         permanent: false,
       },
+      {
+        source: '/collections',
+        destination: '/',
+        permanent: false,
+      },
     ];
   },
 };

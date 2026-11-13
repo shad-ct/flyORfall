@@ -26,17 +26,17 @@ export default function CartDrawer() {
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[rgb(18,18,18)] text-white border-l border-white/10 flex flex-col shadow-2xl">
+        <div className="w-screen max-w-md bg-[#0C1333] text-white border-l border-white/10 flex flex-col shadow-2xl">
           {/* Header */}
           <div className="p-6 border-b border-white/10 flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <h2 className="text-xl font-bold uppercase tracking-wider font-['Barlow_Condensed']">
+              <h2 className="text-xl font-bold uppercase tracking-wider font-display">
                 Your Bag ({totalItems})
               </h2>
             </div>
             <button
               onClick={() => setIsCartOpen(false)}
-              className="p-2 text-white/70 hover:text-white transition"
+              className="p-2 text-white/70 hover:text-white transition cursor-pointer"
               aria-label="Close cart"
             >
               <svg
@@ -75,12 +75,13 @@ export default function CartDrawer() {
                   </svg>
                 </div>
                 <p className="text-white/60 text-sm">Your shopping bag is empty.</p>
-                <button
+                <Link
+                  href="/products/altitude-cargo-pants"
                   onClick={() => setIsCartOpen(false)}
-                  className="px-6 py-2.5 bg-white text-black text-xs font-bold uppercase tracking-widest hover:bg-white/90 transition rounded-sm"
+                  className="inline-block px-6 py-2.5 bg-[#D4FF00] text-black text-xs font-display font-bold uppercase tracking-widest hover:bg-[#BEF200] transition rounded-sm"
                 >
                   Start Shopping
-                </button>
+                </Link>
               </div>
             ) : (
               items.map((item) => (
@@ -91,37 +92,37 @@ export default function CartDrawer() {
                   <img
                     src={item.product.thumbnail}
                     alt={item.product.name}
-                    className="w-20 h-24 object-cover rounded bg-white/5 shrink-0"
+                    className="w-20 h-24 object-cover rounded bg-[#0F1738] shrink-0"
                   />
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-['Barlow_Condensed'] font-semibold text-base uppercase text-white truncate">
+                    <h3 className="font-display font-semibold text-base uppercase text-white truncate">
                       {item.product.name}
                     </h3>
                     <p className="text-xs text-white/60 mt-1">
-                      Size: {item.size} • Color: {item.color}
+                      Size: <span className="text-[#D4FF00] font-bold">{item.size}</span> | Color: {item.color}
                     </p>
-                    <p className="text-sm font-bold text-white mt-1">
-                      {item.product.priceFormatted}
+                    <p className="text-sm font-bold text-white mt-2">
+                      Rs. {item.product.price * item.quantity}
                     </p>
 
                     <div className="flex items-center justify-between mt-3">
-                      <div className="flex items-center border border-white/20 rounded">
+                      <div className="flex items-center border border-white/20 rounded h-8 bg-[#0F1738]">
                         <button
                           onClick={() =>
                             updateQuantity(item.id, item.quantity - 1)
                           }
-                          className="px-2.5 py-1 text-xs text-white/70 hover:text-white"
+                          className="px-2.5 text-xs text-white/60 hover:text-white cursor-pointer"
                         >
                           -
                         </button>
-                        <span className="px-2 text-xs font-medium">
+                        <span className="px-2 text-xs font-bold text-white">
                           {item.quantity}
                         </span>
                         <button
                           onClick={() =>
                             updateQuantity(item.id, item.quantity + 1)
                           }
-                          className="px-2.5 py-1 text-xs text-white/70 hover:text-white"
+                          className="px-2.5 text-xs text-white/60 hover:text-white cursor-pointer"
                         >
                           +
                         </button>
@@ -129,7 +130,7 @@ export default function CartDrawer() {
 
                       <button
                         onClick={() => removeItem(item.id)}
-                        className="text-xs text-red-400 hover:text-red-300 transition"
+                        className="text-xs text-red-400 hover:text-red-300 font-medium cursor-pointer"
                       >
                         Remove
                       </button>
@@ -140,32 +141,31 @@ export default function CartDrawer() {
             )}
           </div>
 
-          {/* Footer */}
+          {/* Subtotal & Checkout Bottom Bar */}
           {items.length > 0 && (
-            <div className="p-6 border-t border-white/10 bg-[rgb(14,14,14)] space-y-4">
-              <div className="flex justify-between text-sm">
-                <span className="text-white/70">Subtotal</span>
-                <span className="font-bold text-white">
-                  Rs. {totalPrice.toLocaleString("en-IN")}.00
-                </span>
+            <div className="p-6 border-t border-white/10 bg-[#090E26] space-y-4">
+              <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider text-white">
+                <span>Subtotal</span>
+                <span className="text-xl text-[#D4FF00]">Rs. {totalPrice.toLocaleString("en-IN")}</span>
               </div>
-              <p className="text-xs text-white/50">
-                Taxes included. Free express shipping applied at checkout.
+              <p className="text-[11px] text-white/60">
+                Free shipping on prepaid orders • COD available (+₹100 extra charge).
               </p>
               <div className="space-y-2">
                 <Link
                   href="/cart"
                   onClick={() => setIsCartOpen(false)}
-                  className="block w-full py-3.5 bg-white text-black text-center font-['Barlow_Condensed'] text-base font-bold uppercase tracking-wider rounded-sm hover:bg-white/90 transition shadow-lg"
+                  className="block w-full py-3.5 bg-[#D4FF00] hover:bg-[#BEF200] text-black font-display text-sm font-bold uppercase tracking-widest text-center rounded-sm transition shadow-[0_4px_15px_rgba(212,255,0,0.3)]"
                 >
-                  Proceed to Checkout
+                  Proceed To Checkout
                 </Link>
-                <button
+                <Link
+                  href="/"
                   onClick={() => setIsCartOpen(false)}
-                  className="block w-full py-2.5 text-center text-xs text-white/60 uppercase tracking-widest hover:text-white transition"
+                  className="block w-full py-2.5 text-center text-xs font-display font-semibold uppercase tracking-wider text-white/70 hover:text-white transition"
                 >
-                  Continue Browsing
-                </button>
+                  Continue Shopping
+                </Link>
               </div>
             </div>
           )}
@@ -174,4 +174,3 @@ export default function CartDrawer() {
     </div>
   );
 }
-

@@ -4,9 +4,10 @@ import { PRODUCTS } from "../../../lib/site";
 import ProductDetailView from "../../../components/ProductDetailView";
 
 export async function generateStaticParams() {
-  return PRODUCTS.map((p) => ({
-    slug: p.slug,
-  }));
+  return [
+    { slug: "imported-lightweight-track-pants" },
+    { slug: "altitude-cargo-pants" },
+  ];
 }
 
 export async function generateMetadata({
@@ -15,14 +16,17 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  let product = PRODUCTS.find((p) => p.slug === slug);
+  if (!product && (slug === "altitude-cargo-pants" || slug === "imported-lightweight-track-pants")) {
+    product = PRODUCTS[0];
+  }
   if (!product) return {};
 
   return {
-    title: `${product.name} – FLY OR FALL`,
+    title: `${product.name} – FALL OR FLY`,
     description: product.description,
     openGraph: {
-      title: `${product.name} – FLY OR FALL`,
+      title: `${product.name} – FALL OR FLY`,
       description: product.description,
       images: [product.thumbnail],
     },
@@ -35,7 +39,10 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = PRODUCTS.find((p) => p.slug === slug);
+  let product = PRODUCTS.find((p) => p.slug === slug);
+  if (!product && (slug === "altitude-cargo-pants" || slug === "imported-lightweight-track-pants")) {
+    product = PRODUCTS[0];
+  }
 
   if (!product) {
     notFound();

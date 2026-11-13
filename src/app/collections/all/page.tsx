@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function CollectionsAllPage() {
-  redirect("/");
+  redirect("/products/altitude-cargo-pants");
 }
