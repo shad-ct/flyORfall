@@ -83,7 +83,7 @@ export default function OriginalHomePage() {
       <section className="w-full bg-[#0F1738] border-y border-white/10 py-20 px-4">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <span className="text-xs font-bold tracking-[0.3em] uppercase text-[#D4FF00]">
-            THE FLY OR FALL MANIFESTO
+            THE FALL OR FLY MANIFESTO
           </span>
           <h2 className="font-display text-3xl sm:text-5xl md:text-6xl font-black uppercase tracking-tight text-white leading-tight">
             “WE DO NOT DESIGN FOR COMFORT ZONES. WE CRAFT FOR THE LEAP.”
