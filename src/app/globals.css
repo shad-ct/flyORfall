@@ -25,11 +25,11 @@
 }
 
 :root {
-  /* Streetwear Theme: Deep Midnight Cobalt & Electric Volt Accent */
+  /* Streetwear Theme: Deep Midnight Cobalt & Electric Blue Accent */
   --background: #080D26;
   --foreground: rgba(255, 255, 255, 0.85);
-  --primary: #D4FF00;
-  --accent: #D4FF00;
+  --primary: #3B82F6;
+  --accent: #3B82F6;
   --border: rgba(255, 255, 255, 0.1);
   --surface: #0F1738;
   --surface-2: #131C44;
@@ -44,9 +44,9 @@
   --theme-card-subtle: #131C44;
   --theme-surface-elevated: #182352;
   --theme-border: rgba(255, 255, 255, 0.08);
-  --theme-border-bright: rgba(212, 255, 0, 0.4);
-  --theme-accent: #D4FF00;
-  --theme-accent-hover: #BEF200;
+  --theme-border-bright: rgba(59, 130, 246, 0.4);
+  --theme-accent: #3B82F6;
+  --theme-accent-hover: #60A5FA;
   --theme-text-main: #FFFFFF;
   --theme-text-muted: rgba(255, 255, 255, 0.65);
   --theme-text-dim: rgba(255, 255, 255, 0.45);

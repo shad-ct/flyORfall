@@ -81,10 +81,10 @@ export default function CartPage() {
   if (orderComplete) {
     return (
       <div className="max-w-2xl mx-auto px-4 py-24 text-center space-y-6">
-        <div className="w-20 h-20 bg-[#D4FF00]/20 text-[#D4FF00] rounded-full flex items-center justify-center text-4xl mx-auto">
+        <div className="w-20 h-20 bg-[#3B82F6]/20 text-[#3B82F6] rounded-full flex items-center justify-center text-4xl mx-auto">
           ✓
         </div>
-        <h1 className="font-display text-4xl sm:text-5xl font-black uppercase text-white">
+        <h1 className="font-display text-4xl sm:text-5xl font-white uppercase text-white">
           ORDER INITIATED!
         </h1>
         <p className="text-white/70 text-sm">
@@ -92,7 +92,7 @@ export default function CartPage() {
         </p>
         <Link
           href="/products/altitude-cargo-pants"
-          className="inline-block px-8 py-3.5 bg-[#D4FF00] text-black font-display text-base font-bold uppercase tracking-widest rounded hover:bg-[#BEF200] transition shadow-lg"
+          className="inline-block px-8 py-3.5 bg-[#3B82F6] text-white font-display text-base font-bold uppercase tracking-widest rounded hover:bg-[#60A5FA] transition shadow-lg"
         >
           Back To Store
         </Link>
@@ -104,16 +104,16 @@ export default function CartPage() {
     <div className="max-w-[1400px] mx-auto px-4 sm:px-8 lg:px-12 py-12 md:py-16">
       <div className="mb-10 pb-6 border-b border-white/10 flex items-center justify-between">
         <div>
-          <span className="text-xs font-bold tracking-[0.2em] text-[#D4FF00] uppercase block mb-1">
+          <span className="text-xs font-bold tracking-[0.2em] text-[#3B82F6] uppercase block mb-1">
             CHECKOUT DESK
           </span>
-          <h1 className="font-display text-4xl sm:text-5xl font-black uppercase tracking-wide text-white">
+          <h1 className="font-display text-4xl sm:text-5xl font-white uppercase tracking-wide text-white">
             YOUR SHOPPING BAG
           </h1>
         </div>
         <Link
           href="/products/altitude-cargo-pants"
-          className="text-xs font-bold uppercase tracking-widest text-[#D4FF00] hover:underline"
+          className="text-xs font-bold uppercase tracking-widest text-[#3B82F6] hover:underline"
         >
           Continue Shopping →
         </Link>
@@ -134,7 +134,7 @@ export default function CartPage() {
           </div>
           <Link
             href="/products/altitude-cargo-pants"
-            className="inline-block px-8 py-3.5 bg-[#D4FF00] text-black font-display text-base font-bold uppercase tracking-widest rounded hover:bg-[#BEF200] transition shadow-xl"
+            className="inline-block px-8 py-3.5 bg-[#3B82F6] text-white font-display text-base font-bold uppercase tracking-widest rounded hover:bg-[#60A5FA] transition shadow-xl"
           >
             Explore Altitude Cargo
           </Link>
@@ -158,12 +158,12 @@ export default function CartPage() {
                     <div>
                       <Link
                         href={`/products/${item.product.slug}`}
-                        className="font-display text-lg font-bold uppercase text-white hover:text-[#D4FF00] block"
+                        className="font-display text-lg font-bold uppercase text-white hover:text-[#3B82F6] block"
                       >
                         {item.product.name}
                       </Link>
                       <p className="text-xs text-white/60 mt-1">
-                        Size: <span className="text-[#D4FF00] font-semibold">{item.size}</span> • Color: <span className="text-white font-semibold">{item.color}</span>
+                        Size: <span className="text-[#3B82F6] font-semibold">{item.size}</span> • Color: <span className="text-white font-semibold">{item.color}</span>
                       </p>
                       <p className="text-sm font-bold text-white mt-1">
                         {item.product.priceFormatted}
@@ -194,7 +194,7 @@ export default function CartPage() {
                     </div>
 
                     <div className="text-right">
-                      <div className="text-sm font-bold text-[#D4FF00]">
+                      <div className="text-sm font-bold text-white">
                         Rs. {(item.product.price * item.quantity).toLocaleString("en-IN")}.00
                       </div>
                       <button
@@ -238,24 +238,23 @@ export default function CartPage() {
                     placeholder="FLYFALL200"
                     value={couponCode}
                     onChange={(e) => setCouponCode(e.target.value)}
-                    className="flex-1 bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs uppercase text-white placeholder-white/30 focus:outline-hidden focus:border-[#D4FF00]"
+                    className="flex-1 bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs uppercase text-white placeholder-white/30 focus:outline-hidden focus:border-[#3B82F6]"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-[#D4FF00] hover:bg-[#BEF200] text-black text-xs font-bold uppercase rounded transition cursor-pointer"
+                    className="px-4 py-2 bg-[#3B82F6] hover:bg-[#60A5FA] text-white text-xs font-bold uppercase rounded transition cursor-pointer"
                   >
                     Apply
                   </button>
                 </div>
-                {couponMessage && (
-                  <p
-                    className={`text-xs ${
-                      couponMessage.error ? "text-red-400" : "text-[#D4FF00] font-semibold"
-                    }`}
-                  >
-                    {couponMessage.text}
-                  </p>
-                )}
+                  {couponMessage && (
+                    <p
+                      className={`text-xs ${couponMessage.error ? "text-red-400" : "text-[#3B82F6] font-semibold"
+                        }`}
+                    >
+                      {couponMessage.text}
+                    </p>
+                  )}
               </form>
 
               {/* Payment Method Selector */}
@@ -274,28 +273,26 @@ export default function CartPage() {
                   <button
                     type="button"
                     onClick={() => setPaymentMethod("prepaid")}
-                    className={`p-3 rounded border text-left transition cursor-pointer flex flex-col justify-between ${
-                      paymentMethod === "prepaid"
-                        ? "bg-[#131C44] border-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.18)]"
-                        : "bg-[#0A102A] border-white/15 hover:border-white/30 text-white/70"
-                    }`}
+                    className={`p-3 rounded border text-left transition cursor-pointer flex flex-col justify-between ${paymentMethod === "prepaid"
+                      ? "bg-[#131C44] border-[#3B82F6] shadow-[0_0_15px_rgba(59,130,246,0.18)]"
+                      : "bg-[#0A102A] border-white/15 hover:border-white/30 text-white/70"
+                      }`}
                   >
                     <div className="flex items-center justify-between w-full">
                       <span className="font-display font-bold text-xs uppercase text-white flex items-center gap-2">
                         <span
-                          className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${
-                            paymentMethod === "prepaid"
-                              ? "border-[#D4FF00] bg-[#D4FF00]"
-                              : "border-white/40"
-                          }`}
+                          className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${paymentMethod === "prepaid"
+                            ? "border-[#3B82F6] bg-[#3B82F6]"
+                            : "border-white/40"
+                            }`}
                         >
                           {paymentMethod === "prepaid" && (
-                            <span className="w-1.5 h-1.5 bg-black rounded-full" />
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
                           )}
                         </span>
                         Prepaid (Online)
                       </span>
-                      <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 bg-[#D4FF00]/15 text-[#D4FF00] border border-[#D4FF00]/30 rounded">
+                      <span className="text-[10px] font-extrabold uppercase px-1.5 py-0.5 bg-[#3B82F6]/15 text-[#3B82F6] border border-[#3B82F6]/30 rounded">
                         FREE
                       </span>
                     </div>
@@ -308,23 +305,21 @@ export default function CartPage() {
                   <button
                     type="button"
                     onClick={() => setPaymentMethod("cod")}
-                    className={`p-3 rounded border text-left transition cursor-pointer flex flex-col justify-between ${
-                      paymentMethod === "cod"
-                        ? "bg-[#131C44] border-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.18)]"
-                        : "bg-[#0A102A] border-white/15 hover:border-white/30 text-white/70"
-                    }`}
+                    className={`p-3 rounded border text-left transition cursor-pointer flex flex-col justify-between ${paymentMethod === "cod"
+                      ? "bg-[#131C44] border-[#3B82F6] shadow-[0_0_15px_rgba(59,130,246,0.18)]"
+                      : "bg-[#0A102A] border-white/15 hover:border-white/30 text-white/70"
+                      }`}
                   >
                     <div className="flex items-center justify-between w-full">
                       <span className="font-display font-bold text-xs uppercase text-white flex items-center gap-2">
                         <span
-                          className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${
-                            paymentMethod === "cod"
-                              ? "border-[#D4FF00] bg-[#D4FF00]"
-                              : "border-white/40"
-                          }`}
+                          className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center shrink-0 ${paymentMethod === "cod"
+                            ? "border-[#3B82F6] bg-[#3B82F6]"
+                            : "border-white/40"
+                            }`}
                         >
                           {paymentMethod === "cod" && (
-                            <span className="w-1.5 h-1.5 bg-black rounded-full" />
+                            <span className="w-1.5 h-1.5 bg-white rounded-full" />
                           )}
                         </span>
                         Cash on Delivery
@@ -347,14 +342,14 @@ export default function CartPage() {
                   <span>Rs. {totalPrice.toLocaleString("en-IN")}.00</span>
                 </div>
                 {discount > 0 && (
-                  <div className="flex justify-between text-[#D4FF00] font-medium">
+                  <div className="flex justify-between text-white font-medium">
                     <span>Discount (FLYFALL200)</span>
                     <span>- Rs. {discount}.00</span>
                   </div>
                 )}
                 <div className="flex justify-between text-white/70">
                   <span>Standard Pan-India Shipping</span>
-                  <span className="text-[#D4FF00] font-bold uppercase text-xs">FREE</span>
+                  <span className="text-[#3B82F6] font-bold uppercase text-xs">FREE</span>
                 </div>
 
                 {paymentMethod === "cod" ? (
@@ -366,7 +361,7 @@ export default function CartPage() {
                     <span className="font-bold text-sm">+ Rs. 100.00</span>
                   </div>
                 ) : (
-                  <div className="flex justify-between text-emerald-400 text-xs">
+                  <div className="flex justify-between text-white text-xs">
                     <span>Prepaid Benefit</span>
                     <span>Free Delivery (No COD fee)</span>
                   </div>
@@ -374,7 +369,7 @@ export default function CartPage() {
 
                 <div className="flex justify-between text-lg font-bold text-white border-t border-white/10 pt-3">
                   <span>Total Payable</span>
-                  <span className="text-[#D4FF00]">Rs. {finalTotal.toLocaleString("en-IN")}.00</span>
+                  <span className="text-white">Rs. {finalTotal.toLocaleString("en-IN")}.00</span>
                 </div>
                 {paymentMethod === "cod" && (
                   <p className="text-[11px] text-amber-300/80 text-right">
@@ -388,7 +383,7 @@ export default function CartPage() {
                 <button
                   type="button"
                   onClick={() => setIsCheckingOut(true)}
-                  className="w-full py-4 bg-[#D4FF00] hover:bg-[#BEF200] text-black font-display text-base font-bold uppercase tracking-widest rounded transition shadow-xl cursor-pointer"
+                  className="w-full py-4 bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-display text-base font-bold uppercase tracking-widest rounded transition shadow-xl cursor-pointer flex items-center justify-center gap-2"
                 >
                   Proceed to Delivery Details
                 </button>
@@ -399,7 +394,7 @@ export default function CartPage() {
                       Shipping Details:
                     </span>
                     <span className="text-[11px] text-white/60">
-                      Payment: <strong className={paymentMethod === "cod" ? "text-amber-300" : "text-[#D4FF00]"}>{paymentMethod === "cod" ? "COD (+₹100)" : "Prepaid"}</strong>
+                      Payment: <strong className={paymentMethod === "cod" ? "text-amber-300" : "text-[#3B82F6]"}>{paymentMethod === "cod" ? "COD (+₹100)" : "Prepaid"}</strong>
                     </span>
                   </div>
                   <input
@@ -408,7 +403,7 @@ export default function CartPage() {
                     required
                     value={customerInfo.name}
                     onChange={(e) => setCustomerInfo({ ...customerInfo, name: e.target.value })}
-                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#D4FF00]"
+                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#3B82F6]"
                   />
                   <input
                     type="tel"
@@ -416,7 +411,7 @@ export default function CartPage() {
                     required
                     value={customerInfo.phone}
                     onChange={(e) => setCustomerInfo({ ...customerInfo, phone: e.target.value })}
-                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#D4FF00]"
+                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#3B82F6]"
                   />
                   <input
                     type="text"
@@ -424,7 +419,7 @@ export default function CartPage() {
                     required
                     value={customerInfo.address}
                     onChange={(e) => setCustomerInfo({ ...customerInfo, address: e.target.value })}
-                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#D4FF00]"
+                    className="w-full bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#3B82F6]"
                   />
                   <div className="grid grid-cols-2 gap-2">
                     <input
@@ -433,7 +428,7 @@ export default function CartPage() {
                       required
                       value={customerInfo.city}
                       onChange={(e) => setCustomerInfo({ ...customerInfo, city: e.target.value })}
-                      className="bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#D4FF00]"
+                      className="bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#3B82F6]"
                     />
                     <input
                       type="text"
@@ -441,12 +436,12 @@ export default function CartPage() {
                       required
                       value={customerInfo.pincode}
                       onChange={(e) => setCustomerInfo({ ...customerInfo, pincode: e.target.value })}
-                      className="bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#D4FF00]"
+                      className="bg-[#131C44] border border-white/20 rounded px-3 py-2 text-xs text-white focus:outline-hidden focus:border-[#3B82F6]"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-display text-base font-bold uppercase tracking-widest rounded transition shadow-xl mt-3 cursor-pointer flex items-center justify-center gap-2.5"
+                    className="w-full py-4 bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-display text-base font-bold uppercase tracking-widest rounded transition shadow-xl mt-3 cursor-pointer flex items-center justify-center gap-2.5"
                   >
                     <WhatsAppIcon className="w-5 h-5 fill-current" />
                     <span>Confirm & Order via WhatsApp • Rs. {finalTotal}</span>
@@ -459,7 +454,7 @@ export default function CartPage() {
                 <p>🔄 <strong>Returns:</strong> 4 days from delivery (unboxing video mandatory).</p>
                 <div className="flex flex-wrap items-center gap-3 pt-0.5 text-white/70">
                   <span className="flex items-center gap-1.5">
-                    <PhoneIcon className="w-3.5 h-3.5 text-[#D4FF00]" />
+                    <PhoneIcon className="w-3.5 h-3.5 text-[#3B82F6]" />
                     <span>8590877545</span>
                   </span>
                   <span>•</span>
@@ -467,7 +462,7 @@ export default function CartPage() {
                     href="https://instagram.com/fall.or_fly"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-1.5 hover:text-[#D4FF00] transition"
+                    className="flex items-center gap-1.5 hover:text-[#3B82F6] transition"
                   >
                     <InstagramIcon className="w-3.5 h-3.5 text-pink-400" />
                     <span>@fall.or_fly</span>

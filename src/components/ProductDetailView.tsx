@@ -146,7 +146,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
           {/* Color Selector */}
           <div className="space-y-2.5">
             <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-white">
-              <span>Color: <span className="text-[#D4FF00] font-normal">{selectedColor}</span></span>
+              <span>Color: <span className="text-[#3B82F6] font-normal">{selectedColor}</span></span>
             </div>
             <div className="flex flex-wrap gap-2">
               {product.colors.map((c) => (
@@ -155,7 +155,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
                   type="button"
                   onClick={() => handleColorChange(c)}
                   className={`h-10 px-4 rounded-sm text-xs font-display font-bold uppercase tracking-wider border transition-all duration-150 cursor-pointer flex items-center justify-center ${selectedColor === c
-                    ? "bg-[#D4FF00] text-black border-[#D4FF00] shadow-[0_0_12px_rgba(212,255,0,0.3)] font-extrabold scale-102"
+                    ? "bg-[#3B82F6] text-black border-[#3B82F6] shadow-[0_0_12px_rgba(59,130,246,0.3)] font-extrabold scale-102"
                     : "bg-[#0F1738] text-white/80 border-white/20 hover:border-white/60 hover:text-white"
                     }`}
                 >
@@ -189,7 +189,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
                     type="button"
                     onClick={() => setSelectedSize(s)}
                     className={`min-w-[4.5rem] h-12 px-4 rounded-sm font-display text-base font-bold uppercase border transition-all duration-150 cursor-pointer flex items-center justify-center gap-1.5 ${isSelected
-                      ? "bg-[#D4FF00] text-black border-[#D4FF00] shadow-[0_0_15px_rgba(212,255,0,0.35)] font-black scale-102"
+                      ? "bg-[#3B82F6] text-black border-[#3B82F6] shadow-[0_0_15px_rgba(59,130,246,0.35)] font-black scale-102"
                       : "bg-[#0F1738] text-white/80 border-white/20 hover:border-white/70 hover:text-white"
                       }`}
                   >
@@ -275,7 +275,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
             <button
               type="button"
               onClick={handleAddToCart}
-              className="w-full h-13 sm:h-14 bg-[#D4FF00] hover:bg-[#BEF200] text-black font-display text-base sm:text-lg font-bold uppercase tracking-[2px] rounded-sm active:scale-[0.99] transition-all shadow-[0_4px_25px_rgba(212,255,0,0.3)] flex items-center justify-center gap-2 cursor-pointer"
+              className="w-full h-13 sm:h-14 bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-display text-base sm:text-lg font-bold uppercase tracking-[2px] rounded-sm active:scale-[0.99] transition-all shadow-[0_4px_25px_rgba(59,130,246,0.3)] flex items-center justify-center gap-2 cursor-pointer"
             >
               Add To Bag • {product.priceFormatted}
             </button>
@@ -291,7 +291,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
             </button>
 
             {addedNotice && (
-              <div className="p-3 bg-[#D4FF00]/15 border border-[#D4FF00]/40 rounded text-center text-xs font-bold uppercase tracking-widest text-[#D4FF00] animate-in fade-in">
+              <div className="p-3 bg-[#3B82F6]/15 border border-[#3B82F6]/40 rounded text-center text-xs font-bold uppercase tracking-widest text-[#3B82F6] animate-in fade-in">
                 ✓ Added to your bag! Check your drawer.
               </div>
             )}

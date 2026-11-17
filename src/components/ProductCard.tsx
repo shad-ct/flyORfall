@@ -51,18 +51,17 @@ export default function ProductCard({ product }: { product: Product }) {
 
         {/* Badge */}
         {product.tag && (
-          <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#D4FF00] text-black font-display text-[9px] sm:text-xs font-black tracking-widest uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xs shadow-[0_0_10px_rgba(212,255,0,0.3)]">
+          <span className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 bg-[#D4FF00] text-white font-display text-[9px] sm:text-xs font-white tracking-widest uppercase px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-xs shadow-[0_0_10px_rgba(212,255,0,0.3)]">
             {product.tag}
           </span>
         )}
 
         {/* Desktop Quick Add Overlay */}
         <div
-          className={`hidden md:block absolute inset-x-3 bottom-3 z-10 transition-all duration-300 ${
-            isHovered
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4 pointer-events-none"
-          }`}
+          className={`hidden md:block absolute inset-x-3 bottom-3 z-10 transition-all duration-300 ${isHovered
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4 pointer-events-none"
+            }`}
         >
           {showSizePicker ? (
             <div className="bg-[#0C1333]/95 backdrop-blur-md p-3 rounded-sm shadow-2xl border border-white/20 space-y-2">
@@ -90,11 +89,10 @@ export default function ProductCard({ product }: { product: Product }) {
                       e.stopPropagation();
                       setSelectedSize(s);
                     }}
-                    className={`flex-1 min-w-[2.5rem] h-8 text-xs font-display font-bold rounded-xs border transition-all cursor-pointer flex items-center justify-center ${
-                      selectedSize === s
-                        ? "bg-[#D4FF00] text-black border-[#D4FF00] shadow-[0_0_8px_rgba(212,255,0,0.3)] scale-102"
-                        : "bg-[#131C44] text-white border-white/20 hover:border-white/60"
-                    }`}
+                    className={`flex-1 min-w-[2.5rem] h-8 text-xs font-display font-bold rounded-xs border transition-all cursor-pointer flex items-center justify-center ${selectedSize === s
+                      ? "bg-[#D4FF00] text-white border-[#D4FF00] shadow-[0_0_8px_rgba(212,255,0,0.3)] scale-102"
+                      : "bg-[#131C44] text-white border-white/20 hover:border-white/60"
+                      }`}
                   >
                     {s}
                   </button>
@@ -103,7 +101,7 @@ export default function ProductCard({ product }: { product: Product }) {
               <button
                 type="button"
                 onClick={handleQuickAdd}
-                className="w-full py-2 bg-[#D4FF00] hover:bg-[#BEF200] text-black text-xs font-display font-extrabold uppercase tracking-widest rounded-xs transition shadow cursor-pointer"
+                className="w-full py-2 bg-[#D4FF00] hover:bg-[#BEF200] text-white text-xs font-display font-extrabold uppercase tracking-widest rounded-xs transition shadow cursor-pointer"
               >
                 Confirm Size & Bag
               </button>
@@ -116,7 +114,7 @@ export default function ProductCard({ product }: { product: Product }) {
                 e.stopPropagation();
                 setShowSizePicker(true);
               }}
-              className="w-full py-2.5 bg-[#D4FF00] hover:bg-[#BEF200] text-black font-display text-xs font-bold uppercase tracking-widest rounded-xs shadow-lg transition-all duration-150 cursor-pointer flex items-center justify-center gap-1.5"
+              className="w-full py-2.5 bg-[#D4FF00] hover:bg-[#BEF200] text-white font-display text-xs font-bold uppercase tracking-widest rounded-xs shadow-lg transition-all duration-150 cursor-pointer flex items-center justify-center gap-1.5"
             >
               <span>+ Quick Add</span>
             </button>
@@ -157,7 +155,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <button
             type="button"
             onClick={handleMobileQuickAdd}
-            className="md:hidden p-2 rounded-full bg-[#D4FF00] text-black hover:bg-[#BEF200] transition cursor-pointer"
+            className="md:hidden p-2 rounded-full bg-[#D4FF00] text-white hover:bg-[#BEF200] transition cursor-pointer"
             aria-label="Add to bag"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

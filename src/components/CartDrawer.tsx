@@ -78,7 +78,7 @@ export default function CartDrawer() {
                 <Link
                   href="/products/altitude-cargo-pants"
                   onClick={() => setIsCartOpen(false)}
-                  className="inline-block px-6 py-2.5 bg-[#D4FF00] text-black text-xs font-display font-bold uppercase tracking-widest hover:bg-[#BEF200] transition rounded-sm"
+                  className="inline-block px-6 py-2.5 bg-[#3B82F6] text-black text-xs font-display font-bold uppercase tracking-widest hover:bg-[#60A5FA] transition rounded-sm"
                 >
                   Start Shopping
                 </Link>
@@ -102,7 +102,7 @@ export default function CartDrawer() {
                       {item.product.name}
                     </h3>
                     <p className="text-xs text-white/60 mt-1">
-                      Size: <span className="text-[#D4FF00] font-bold">{item.size}</span> | Color: {item.color}
+                      Size: <span className="text-[#3B82F6] font-bold">{item.size}</span> | Color: {item.color}
                     </p>
                     <p className="text-sm font-bold text-white mt-2">
                       Rs. {item.product.price * item.quantity}
@@ -149,7 +149,7 @@ export default function CartDrawer() {
             <div className="p-6 border-t border-white/10 bg-[#090E26] space-y-4">
               <div className="flex justify-between items-center text-sm font-bold uppercase tracking-wider text-white">
                 <span>Subtotal</span>
-                <span className="text-xl text-[#D4FF00]">Rs. {totalPrice.toLocaleString("en-IN")}</span>
+                <span className="text-xl text-white">Rs. {totalPrice.toLocaleString("en-IN")}</span>
               </div>
               <p className="text-[11px] text-white/60">
                 Free shipping on prepaid orders • COD available (+₹100 extra charge).
@@ -158,7 +158,7 @@ export default function CartDrawer() {
                 <Link
                   href="/cart"
                   onClick={() => setIsCartOpen(false)}
-                  className="block w-full py-3.5 bg-[#D4FF00] hover:bg-[#BEF200] text-black font-display text-sm font-bold uppercase tracking-widest text-center rounded-sm transition shadow-[0_4px_15px_rgba(212,255,0,0.3)]"
+                  className="block w-full py-3.5 bg-[#3B82F6] hover:bg-[#60A5FA] text-white font-display text-sm font-bold uppercase tracking-widest text-center rounded-sm transition shadow-[0_4px_15px_rgba(59,130,246,0.3)]"
                 >
                   Proceed To Checkout
                 </Link>

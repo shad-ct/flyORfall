@@ -32,13 +32,13 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: `${SITE_ORIGIN}/assets/bottom/black/IMG_1974.webp`,
+        url: `${SITE_ORIGIN}/assets/bottom/black/1.jpeg`,
         width: 1200,
         height: 1600,
         alt: "FALL OR FLY Imported Lightweight Track Pants in Black",
       },
       {
-        url: `${SITE_ORIGIN}/assets/bottom/grey/IMG_2054.webp`,
+        url: `${SITE_ORIGIN}/assets/bottom/grey/1.jpeg`,
         width: 1200,
         height: 1600,
         alt: "FALL OR FLY Imported Lightweight Track Pants in Grey",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     title: "IMPORTED LIGHTWEIGHT TRACK PANTS – ₹999 | FALL OR FLY",
     description:
       "Crafted from lightweight imported fabric with quick-dry properties, relaxed wide-leg fit, adjustable drawstrings, and premium embroidery.",
-    images: [`${SITE_ORIGIN}/assets/bottom/black/IMG_1974.webp`],
+    images: [`${SITE_ORIGIN}/assets/bottom/black/1.jpeg`],
   },
 };
 

@@ -8,7 +8,7 @@ import CartDrawer from "../components/CartDrawer";
 import { SITE_NAME, SITE_TAGLINE, SITE_ORIGIN } from "../lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_ORIGIN || "https://flyorfall.netlify.app"),
+  metadataBase: new URL(SITE_ORIGIN || "https://fallorfly.netlify.app"),
   title: {
     default: `${SITE_NAME} | Official Streetwear Store`,
     template: `%s | ${SITE_NAME}`,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_IN",
     images: [
       {
-        url: "/assets/bottom/black/IMG_1974.webp",
+        url: "/assets/bottom/black/1.jpeg",
         width: 1200,
         height: 1600,
         alt: `${SITE_NAME} Streetwear`,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | Official Streetwear Store`,
     description: `${SITE_NAME} - ${SITE_TAGLINE}. Exclusive drops, lightweight imported fabrics, and bold urban cuts.`,
-    images: ["/assets/bottom/black/IMG_1974.webp"],
+    images: ["/assets/bottom/black/1.jpeg"],
   },
   robots: {
     index: true,
