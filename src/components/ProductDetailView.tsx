@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Product, PRODUCTS, SITE_INSTAGRAM, SITE_PHONE } from "../lib/site";
 import { useCart } from "../lib/cart";
@@ -18,6 +18,18 @@ export default function ProductDetailView({ product }: { product: Product }) {
   const [addedNotice, setAddedNotice] = useState(false);
 
   const otherProducts = PRODUCTS.filter((p) => p.id !== product.id);
+
+  // Preload all color images on mount so switching is instant
+  useEffect(() => {
+    if (product.colorImages) {
+      Object.values(product.colorImages)
+        .flat()
+        .forEach((src) => {
+          const img = new window.Image();
+          img.src = src;
+        });
+    }
+  }, [product.colorImages]);
 
   const activeColorImages =
     (product.colorImages && product.colorImages[selectedColor]) || product.images;
