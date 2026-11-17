@@ -1,6 +1,6 @@
 export const SITE_NAME = "FALL OR FLY";
 export const SITE_TAGLINE = "FLY HIGH";
-export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || "https://flyorfall.netlify.app";
 export const SITE_INSTAGRAM = "fall.or_fly";
 export const SITE_PHONE = "8590877545";
 
@@ -36,17 +36,17 @@ export const PRODUCTS: Product[] = [
     colors: ["Black", "Grey"],
     colorImages: {
       Black: [
-        "/assets/bottom/black/IMG_1974.JPEG",
-        "/assets/bottom/black/IMG_1978.JPG.jpeg",
-        "/assets/bottom/black/IMG_1995.JPG.jpeg",
-        "/assets/bottom/black/IMG_2016.PNG",
-        "/assets/bottom/black/IMG_2017.JPG.jpeg"
+        "/assets/bottom/black/IMG_1974.webp",
+        "/assets/bottom/black/IMG_1978.webp",
+        "/assets/bottom/black/IMG_1995.webp",
+        "/assets/bottom/black/IMG_2016.webp",
+        "/assets/bottom/black/IMG_2017.webp"
       ],
       Grey: [
-        "/assets/bottom/grey/IMG_2054.JPG.jpeg",
-        "/assets/bottom/grey/IMG_2055.JPG.jpeg",
-        "/assets/bottom/grey/IMG_2057.JPG.jpeg",
-        "/assets/bottom/grey/IMG_2058.JPG.jpeg"
+        "/assets/bottom/grey/IMG_2054.webp",
+        "/assets/bottom/grey/IMG_2055.webp",
+        "/assets/bottom/grey/IMG_2057.webp",
+        "/assets/bottom/grey/IMG_2058.webp"
       ]
     },
     description:
@@ -60,17 +60,17 @@ export const PRODUCTS: Product[] = [
       "Comfortable and breathable for everyday use"
     ],
     images: [
-      "/assets/bottom/black/IMG_1974.JPEG",
-      "/assets/bottom/black/IMG_1978.JPG.jpeg",
-      "/assets/bottom/black/IMG_1995.JPG.jpeg",
-      "/assets/bottom/black/IMG_2016.PNG",
-      "/assets/bottom/black/IMG_2017.JPG.jpeg",
-      "/assets/bottom/grey/IMG_2054.JPG.jpeg",
-      "/assets/bottom/grey/IMG_2055.JPG.jpeg",
-      "/assets/bottom/grey/IMG_2057.JPG.jpeg",
-      "/assets/bottom/grey/IMG_2058.JPG.jpeg"
+      "/assets/bottom/black/IMG_1974.webp",
+      "/assets/bottom/black/IMG_1978.webp",
+      "/assets/bottom/black/IMG_1995.webp",
+      "/assets/bottom/black/IMG_2016.webp",
+      "/assets/bottom/black/IMG_2017.webp",
+      "/assets/bottom/grey/IMG_2054.webp",
+      "/assets/bottom/grey/IMG_2055.webp",
+      "/assets/bottom/grey/IMG_2057.webp",
+      "/assets/bottom/grey/IMG_2058.webp"
     ],
-    thumbnail: "/assets/bottom/black/IMG_1974.JPEG",
+    thumbnail: "/assets/bottom/black/IMG_1974.webp",
     inStock: true,
     tag: "LIMITED DROP"
   }

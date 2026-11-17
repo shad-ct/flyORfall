@@ -8,9 +8,31 @@ import CartDrawer from "../components/CartDrawer";
 import { SITE_NAME, SITE_TAGLINE, SITE_ORIGIN } from "../lib/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_ORIGIN || "http://localhost:3000"),
-  title: `${SITE_NAME} | Official Streetwear Store`,
+  metadataBase: new URL(SITE_ORIGIN || "https://flyorfall.netlify.app"),
+  title: {
+    default: `${SITE_NAME} | Official Streetwear Store`,
+    template: `%s | ${SITE_NAME}`,
+  },
   description: `${SITE_NAME} - ${SITE_TAGLINE}. Exclusive drops, lightweight imported fabrics, and bold urban cuts.`,
+  keywords: [
+    "FALL OR FLY",
+    "streetwear India",
+    "imported track pants",
+    "lightweight track pants",
+    "wide leg track pants",
+    "baggy pants",
+    "streetwear drop",
+    "urban fashion",
+  ],
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  verification: {
+    google: "RFEHdzlxWE6Bfcx6RrvkfodSMfVJh9Fpgi04Gx_c64I",
+  },
+  alternates: {
+    canonical: SITE_ORIGIN,
+  },
   icons: {
     icon: [
       { url: "/assets/logo.jpeg" },
@@ -20,10 +42,37 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: `${SITE_NAME} | Streetwear`,
-    description: SITE_TAGLINE,
+    title: `${SITE_NAME} | Official Streetwear Store`,
+    description: `${SITE_NAME} - ${SITE_TAGLINE}. Exclusive drops, lightweight imported fabrics, and bold urban cuts.`,
+    url: SITE_ORIGIN,
     type: "website",
     siteName: SITE_NAME,
+    locale: "en_IN",
+    images: [
+      {
+        url: "/assets/bottom/black/IMG_1974.webp",
+        width: 1200,
+        height: 1600,
+        alt: `${SITE_NAME} Streetwear`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${SITE_NAME} | Official Streetwear Store`,
+    description: `${SITE_NAME} - ${SITE_TAGLINE}. Exclusive drops, lightweight imported fabrics, and bold urban cuts.`,
+    images: ["/assets/bottom/black/IMG_1974.webp"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -40,6 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark bg-[#080D26] text-white" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="RFEHdzlxWE6Bfcx6RrvkfodSMfVJh9Fpgi04Gx_c64I" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
