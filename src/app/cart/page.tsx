@@ -148,7 +148,10 @@ export default function CartPage() {
                 <div key={item.id} className="p-6 flex flex-col sm:flex-row gap-6 items-start sm:items-center justify-between">
                   <div className="flex gap-4 items-center">
                     <img
-                      src={item.product.thumbnail}
+                      src={
+                        (item.color && item.product.colorImages?.[item.color]?.[0]) ||
+                        item.product.thumbnail
+                      }
                       alt={item.product.name}
                       className="w-20 h-24 object-cover rounded bg-[#0C1333] shrink-0"
                     />

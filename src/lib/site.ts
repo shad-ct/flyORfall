@@ -14,6 +14,7 @@ export interface Product {
   slug: string;
   sizes: string[];
   colors: string[];
+  colorImages?: Record<string, string[]>;
   description: string;
   details: string[];
   images: string[];
@@ -32,7 +33,22 @@ export const PRODUCTS: Product[] = [
     originalPriceFormatted: "Rs. 1,499",
     slug: "imported-lightweight-track-pants",
     sizes: ["L", "XL"],
-    colors: ["Tactical Black", "Military Olive"],
+    colors: ["Black", "Grey"],
+    colorImages: {
+      Black: [
+        "/assets/bottom/black/IMG_1974.JPEG",
+        "/assets/bottom/black/IMG_1978.JPG.jpeg",
+        "/assets/bottom/black/IMG_1995.JPG.jpeg",
+        "/assets/bottom/black/IMG_2016.PNG",
+        "/assets/bottom/black/IMG_2017.JPG.jpeg"
+      ],
+      Grey: [
+        "/assets/bottom/grey/IMG_2054.JPG.jpeg",
+        "/assets/bottom/grey/IMG_2055.JPG.jpeg",
+        "/assets/bottom/grey/IMG_2057.JPG.jpeg",
+        "/assets/bottom/grey/IMG_2058.JPG.jpeg"
+      ]
+    },
     description:
       "Designed for everyday comfort and effortless movement.\n\nCrafted from lightweight imported fabric, these pants feature quick-dry properties, a relaxed fit, and a wide-leg silhouette for all-day comfort. Finished with adjustable bottom drawstrings and detailed embroidery work, they combine functionality with distinctive style.\n\nPerfect for daily wear, travelling, gym sessions, and casual outings.",
     details: [
@@ -44,13 +60,17 @@ export const PRODUCTS: Product[] = [
       "Comfortable and breathable for everyday use"
     ],
     images: [
-      "/assets/cargo/optimized/IMG_2044.webp",
-      "/assets/cargo/optimized/IMG_2046.webp",
-      "/assets/cargo/optimized/IMG_1798.webp",
-      "/assets/cargo/optimized/IMG_2050.webp",
-      "/assets/cargo/optimized/IMG_2030.webp"
+      "/assets/bottom/black/IMG_1974.JPEG",
+      "/assets/bottom/black/IMG_1978.JPG.jpeg",
+      "/assets/bottom/black/IMG_1995.JPG.jpeg",
+      "/assets/bottom/black/IMG_2016.PNG",
+      "/assets/bottom/black/IMG_2017.JPG.jpeg",
+      "/assets/bottom/grey/IMG_2054.JPG.jpeg",
+      "/assets/bottom/grey/IMG_2055.JPG.jpeg",
+      "/assets/bottom/grey/IMG_2057.JPG.jpeg",
+      "/assets/bottom/grey/IMG_2058.JPG.jpeg"
     ],
-    thumbnail: "/assets/cargo/optimized/IMG_2044.webp",
+    thumbnail: "/assets/bottom/black/IMG_1974.JPEG",
     inStock: true,
     tag: "LIMITED DROP"
   }

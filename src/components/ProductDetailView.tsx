@@ -19,6 +19,19 @@ export default function ProductDetailView({ product }: { product: Product }) {
 
   const otherProducts = PRODUCTS.filter((p) => p.id !== product.id);
 
+  const activeColorImages =
+    (product.colorImages && product.colorImages[selectedColor]) || product.images;
+  const currentHeroImage = activeColorImages.includes(selectedImage)
+    ? selectedImage
+    : activeColorImages[0];
+
+  const handleColorChange = (newColor: string) => {
+    setSelectedColor(newColor);
+    if (product.colorImages && product.colorImages[newColor]?.length > 0) {
+      setSelectedImage(product.colorImages[newColor][0]);
+    }
+  };
+
   const handleAddToCart = () => {
     addItem(product, selectedSize, selectedColor, quantity);
     setAddedNotice(true);
@@ -50,7 +63,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
           {/* Main Hero Image */}
           <div className="relative aspect-3/4 rounded-lg overflow-hidden bg-[#0C1333] border border-white/10 shadow-2xl">
             <img
-              src={selectedImage}
+              src={currentHeroImage}
               alt={product.name}
               className="w-full h-full object-cover transition-all duration-300"
             />
@@ -63,12 +76,12 @@ export default function ProductDetailView({ product }: { product: Product }) {
 
           {/* Thumbnails row */}
           <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 no-scrollbar">
-            {product.images.map((img, idx) => (
+            {activeColorImages.map((img, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => setSelectedImage(img)}
-                className={`relative w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded overflow-hidden border-2 transition-all duration-200 cursor-pointer ${selectedImage === img
+                className={`relative w-20 h-24 sm:w-24 sm:h-28 shrink-0 rounded overflow-hidden border-2 transition-all duration-200 cursor-pointer ${currentHeroImage === img
                   ? "border-[#D4FF00] scale-102 shadow-[0_0_12px_rgba(212,255,0,0.3)]"
                   : "border-transparent opacity-60 hover:opacity-100"
                   }`}
@@ -92,7 +105,7 @@ export default function ProductDetailView({ product }: { product: Product }) {
 
           {/* Pricing */}
           <div className="flex items-center gap-3 sm:gap-4 py-3 border-y border-white/10">
-            <span className="text-3xl sm:text-4xl font-extrabold text-[#D4FF00]">
+            <span className="text-3xl sm:text-4xl font-extrabold text-white">
               {product.priceFormatted}
             </span>
             {product.originalPriceFormatted && (
@@ -120,15 +133,15 @@ export default function ProductDetailView({ product }: { product: Product }) {
 
           {/* Color Selector */}
           <div className="space-y-2.5">
-            {/* <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-white">
+            <div className="flex justify-between items-center text-xs font-bold uppercase tracking-wider text-white">
               <span>Color: <span className="text-[#D4FF00] font-normal">{selectedColor}</span></span>
-            </div> */}
+            </div>
             <div className="flex flex-wrap gap-2">
               {product.colors.map((c) => (
                 <button
                   key={c}
                   type="button"
-                  onClick={() => setSelectedColor(c)}
+                  onClick={() => handleColorChange(c)}
                   className={`h-10 px-4 rounded-sm text-xs font-display font-bold uppercase tracking-wider border transition-all duration-150 cursor-pointer flex items-center justify-center ${selectedColor === c
                     ? "bg-[#D4FF00] text-black border-[#D4FF00] shadow-[0_0_12px_rgba(212,255,0,0.3)] font-extrabold scale-102"
                     : "bg-[#0F1738] text-white/80 border-white/20 hover:border-white/60 hover:text-white"
@@ -195,20 +208,23 @@ export default function ProductDetailView({ product }: { product: Product }) {
                 These are the only available sizes for this limited drop.
               </p>
               <div className="border border-white/10 rounded overflow-hidden">
-                <div className="grid grid-cols-3 bg-[#0F1738] p-2.5 font-display font-bold uppercase text-white text-xs">
+                <div className="grid grid-cols-4 bg-[#0F1738] p-2.5 font-display font-bold uppercase text-white text-xs">
                   <span>SIZE</span>
                   <span>LENGTH</span>
                   <span>WAIST</span>
+                  <span>LEG OPENING</span>
                 </div>
-                <div className="grid grid-cols-3 p-2.5 border-t border-white/10 text-white font-medium">
+                <div className="grid grid-cols-4 p-2.5 border-t border-white/10 text-white font-medium text-xs sm:text-sm">
                   <span className="text-[#D4FF00] font-bold">L</span>
                   <span>41 cm</span>
                   <span>30 - 34</span>
+                  <span>22</span>
                 </div>
-                <div className="grid grid-cols-3 p-2.5 border-t border-white/10 text-white font-medium">
+                <div className="grid grid-cols-4 p-2.5 border-t border-white/10 text-white font-medium text-xs sm:text-sm">
                   <span className="text-[#D4FF00] font-bold">XL</span>
                   <span>42 cm</span>
                   <span>34 - 36</span>
+                  <span>22</span>
                 </div>
               </div>
             </div>

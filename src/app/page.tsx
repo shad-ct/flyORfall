@@ -9,7 +9,7 @@ export const metadata = {
   openGraph: {
     title: "IMPORTED LIGHTWEIGHT TRACK PANTS – FALL OR FLY",
     description: "Designed for everyday comfort and effortless movement. Price 999₹.",
-    images: ["/assets/cargo/optimized/IMG_2044.webp"],
+    images: ["/assets/bottom/black/IMG_1974.JPEG"],
   },
 };
 

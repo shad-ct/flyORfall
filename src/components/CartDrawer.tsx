@@ -90,7 +90,10 @@ export default function CartDrawer() {
                   className="flex gap-4 pb-6 border-b border-white/5"
                 >
                   <img
-                    src={item.product.thumbnail}
+                    src={
+                      (item.color && item.product.colorImages?.[item.color]?.[0]) ||
+                      item.product.thumbnail
+                    }
                     alt={item.product.name}
                     className="w-20 h-24 object-cover rounded bg-[#0F1738] shrink-0"
                   />
