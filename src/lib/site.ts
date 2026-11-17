@@ -1,7 +1,7 @@
 export const SITE_NAME = "FALL OR FLY";
 export const SITE_TAGLINE = "FLY HIGH";
 export const SITE_ORIGIN = process.env.NEXT_PUBLIC_SITE_URL || "https://fallorfly.netlify.app";
-export const SITE_INSTAGRAM = "fall.or_fly";
+export const SITE_INSTAGRAM = "fallorfly__";
 export const SITE_PHONE = "8590877545";
 
 export interface Product {

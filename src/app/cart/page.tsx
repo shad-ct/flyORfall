@@ -247,14 +247,14 @@ export default function CartPage() {
                     Apply
                   </button>
                 </div>
-                  {couponMessage && (
-                    <p
-                      className={`text-xs ${couponMessage.error ? "text-red-400" : "text-[#3B82F6] font-semibold"
-                        }`}
-                    >
-                      {couponMessage.text}
-                    </p>
-                  )}
+                {couponMessage && (
+                  <p
+                    className={`text-xs ${couponMessage.error ? "text-red-400" : "text-[#3B82F6] font-semibold"
+                      }`}
+                  >
+                    {couponMessage.text}
+                  </p>
+                )}
               </form>
 
               {/* Payment Method Selector */}
@@ -459,13 +459,13 @@ export default function CartPage() {
                   </span>
                   <span>•</span>
                   <a
-                    href="https://instagram.com/fall.or_fly"
+                    href="https://instagram.com/fallorfly__"
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center gap-1.5 hover:text-[#3B82F6] transition"
                   >
                     <InstagramIcon className="w-3.5 h-3.5 text-pink-400" />
-                    <span>@fall.or_fly</span>
+                    <span>@fallorfly__</span>
                   </a>
                 </div>
               </div>
