@@ -228,13 +228,13 @@ export default function ProductDetailView({ product }: { product: Product }) {
                 </div>
                 <div className="grid grid-cols-4 p-2.5 border-t border-white/10 text-white font-medium text-xs sm:text-sm">
                   <span className="text-[#D4FF00] font-bold">L</span>
-                  <span>41 cm</span>
+                  <span>41</span>
                   <span>30 - 34</span>
                   <span>22</span>
                 </div>
                 <div className="grid grid-cols-4 p-2.5 border-t border-white/10 text-white font-medium text-xs sm:text-sm">
                   <span className="text-[#D4FF00] font-bold">XL</span>
-                  <span>42 cm</span>
+                  <span>42</span>
                   <span>34 - 36</span>
                   <span>22</span>
                 </div>
