@@ -228,7 +228,7 @@ export default function CartPage() {
               </h2>
 
               {/* Coupon input */}
-              <form onSubmit={handleApplyCoupon} className="space-y-2">
+              {/* <form onSubmit={handleApplyCoupon} className="space-y-2">
                 <label className="text-xs font-bold uppercase tracking-wider text-white/70 block">
                   Have a Discount Code?
                 </label>
@@ -255,7 +255,7 @@ export default function CartPage() {
                     {couponMessage.text}
                   </p>
                 )}
-              </form>
+              </form> */}
 
               {/* Payment Method Selector */}
               <div className="space-y-2.5 pt-2 border-t border-white/10">
